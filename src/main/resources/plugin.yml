@@ -1,0 +1,214 @@
+name: AetherEssentials
+version: '1.0.0'
+main: net.aethernw.essentials.AetherEssentials
+api-version: '1.20'
+authors: [ToprakDev]
+description: High performance essentials plugin
+
+commands:
+  craft:
+    description: Open a virtual crafting table
+    usage: /craft
+    permission: aether.command.craft
+  enderchest:
+    description: Open your Ender Chest
+    usage: /enderchest [player]
+    aliases: [ec]
+    permission: aether.command.enderchest
+  setwarp:
+    description: Create a new warp
+    usage: /setwarp <name>
+    permission: aether.command.setwarp
+  warp:
+    description: Teleport to a warp
+    usage: /warp <name>
+    permission: aether.command.warp
+  warps:
+    description: List all warps
+    usage: /warps
+    permission: aether.command.warps
+  delwarp:
+    description: Delete a warp
+    usage: /delwarp <name>
+    permission: aether.command.delwarp
+  spawn:
+    description: Teleport to the spawn point
+    usage: /spawn
+    permission: aether.command.spawn
+  setspawn:
+    description: Set the spawn point
+    usage: /setspawn
+    permission: aether.command.setspawn
+  repair:
+    description: Repair the item in your hand
+    usage: /repair
+    permission: aether.command.repair
+  repairall:
+    description: Repair everything in your inventory
+    usage: /repairall
+    permission: aether.command.repair.all
+  feed:
+    description: Restore hunger and saturation
+    usage: /feed [player]
+    permission: aether.command.feed
+  tpa:
+    description: Send a teleport request to a player
+    usage: /tpa <player>
+    permission: aether.command.tpa
+  tpahere:
+    description: Ask a player to teleport to you
+    usage: /tpahere <player>
+    permission: aether.command.tpa
+  tpaccept:
+    description: Accept a teleport request
+    usage: /tpaccept [player]
+    permission: aether.command.tpa
+  tpadeny:
+    description: Deny a teleport request
+    usage: /tpadeny [player]
+    permission: aether.command.tpa
+  tpacancel:
+    description: Cancel your sent teleport requests
+    usage: /tpacancel
+    permission: aether.command.tpa
+  tpignore:
+    description: Ignore teleport requests from a player
+    usage: /tpignore [player]
+    permission: aether.command.tpignore
+  heal:
+    description: Restore your health
+    usage: /heal [player]
+    permission: aether.command.heal
+  healall:
+    description: Heal all online players
+    usage: /healall
+    permission: aether.command.heal.all
+  gm:
+    description: Change your game mode
+    usage: /gm <mode> [player]
+    aliases: [gamemode]
+    permission: aether.command.gamemode
+  invsee:
+    description: View another player's inventory
+    usage: /invsee <player>
+    permission: aether.command.invsee
+  mutechat:
+    description: Disable the chat for everyone
+    usage: /mutechat
+    permission: aether.command.mutechat
+  unmutechat:
+    description: Enable the chat for everyone
+    usage: /unmutechat
+    permission: aether.command.unmutechat
+  clearchat:
+    description: Clear the chat for everyone
+    usage: /clearchat
+    permission: aether.command.clearchat
+
+permissions:
+  aether.command.craft:
+    description: Open a virtual crafting table
+    default: true
+  aether.command.enderchest:
+    description: Open your Ender Chest
+    default: true
+  aether.command.enderchest.others:
+    description: Open other players' Ender Chests
+    default: op
+  aether.command.setwarp:
+    description: Create warps
+    default: op
+  aether.command.warp:
+    description: Teleport to warps
+    default: true
+  aether.command.warps:
+    description: View the warp list
+    default: true
+  aether.command.delwarp:
+    description: Delete warps
+    default: op
+  aether.command.spawn:
+    description: Teleport to spawn
+    default: true
+  aether.command.setspawn:
+    description: Set the spawn point
+    default: op
+  aether.command.repair:
+    description: Repair the held item
+    default: true
+  aether.command.repair.all:
+    description: Repair the full inventory
+    default: op
+    children:
+      aether.command.repair: true
+  aether.command.feed:
+    description: Feed yourself
+    default: true
+  aether.command.feed.others:
+    description: Feed other players
+    default: op
+  aether.command.tpa:
+    description: Teleport request commands
+    default: true
+  aether.command.tpignore:
+    description: Ignore teleport requests
+    default: true
+  aether.command.heal:
+    description: Heal yourself
+    default: true
+  aether.command.heal.others:
+    description: Heal other players
+    default: op
+  aether.command.heal.all:
+    description: Heal all online players
+    default: op
+  aether.command.gamemode:
+    description: Change your game mode
+    default: true
+  aether.command.gamemode.others:
+    description: Change other players' game mode
+    default: op
+  aether.command.invsee:
+    description: View other players' inventories
+    default: op
+  aether.command.mutechat:
+    description: Disable the chat
+    default: op
+  aether.command.unmutechat:
+    description: Enable the chat
+    default: op
+  aether.command.clearchat:
+    description: Clear the chat
+    default: op
+  aether.teleport.bypass:
+    description: Bypass the spawn/warp teleport delay
+    default: op
+  aether.*:
+    description: All AetherEssentials permissions
+    default: op
+    children:
+      aether.command.craft: true
+      aether.command.enderchest: true
+      aether.command.enderchest.others: true
+      aether.command.setwarp: true
+      aether.command.warp: true
+      aether.command.warps: true
+      aether.command.delwarp: true
+      aether.command.spawn: true
+      aether.command.setspawn: true
+      aether.command.repair: true
+      aether.command.repair.all: true
+      aether.command.feed: true
+      aether.command.feed.others: true
+      aether.command.tpa: true
+      aether.command.tpignore: true
+      aether.teleport.bypass: true
+      aether.command.heal: true
+      aether.command.heal.others: true
+      aether.command.heal.all: true
+      aether.command.gamemode: true
+      aether.command.gamemode.others: true
+      aether.command.invsee: true
+      aether.command.mutechat: true
+      aether.command.unmutechat: true
+      aether.command.clearchat: true
