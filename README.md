@@ -1,6 +1,6 @@
 # AetherEssentials
 
-![AetherEssentials](aetheressentials.png)
+![AetherEssentials](assets-aetheressentials.png)
 
 ## Permissions
 
